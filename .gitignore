@@ -18,8 +18,10 @@ clients
 nodes
 
 # ## OS junk files
-# [Tt]humbs.db
-# *.DS_Store
+[Tt]humbs.db
+*.DS_Store
+Icon
+Icon
 
 # ## Example of the workstation pattern.
 # !/cookbooks/chef_workstation/files/default/bundler/Gemfile
@@ -28,8 +30,8 @@ nodes
 # !cookbooks/chef_workstation
 
 # ##Chef
-# .kitchen/
-# .vagrant
+.kitchen/
+.vagrant
 # nodes
 # metadata.json
 
