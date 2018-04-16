@@ -4,3 +4,6 @@
 [submodule "cookbooks/perficient_splunk"]
 	path = cookbooks/perficient_splunk
 	url = git@github.com:Perficient-DevOps/chef-perficient_splunk.git
+[submodule "cookbooks/splunk_os_prerequisites"]
+	path = cookbooks/splunk_os_prerequisites
+	url = git@github.com:Perficient-DevOps/chef-splunk_os_prerequisites.git
