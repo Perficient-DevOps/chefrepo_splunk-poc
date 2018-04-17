@@ -1,22 +1,20 @@
-name 'poc_splunk_os_prereqs'
+name 'apache_example'
 maintainer 'The Authors'
 maintainer_email 'you@example.com'
 license 'All Rights Reserved'
-description 'Installs/Configures poc_splunk_os_prereqs'
-long_description 'Installs/Configures poc_splunk_os_prereqs'
-version '0.1.5'
+description 'Installs/Configures apache_example'
+long_description 'Installs/Configures apache_example'
+version '0.1.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
 #
-# issues_url 'https://github.com/<insert_org_here>/poc_splunk_os_prereqs/issues'
+# issues_url 'https://github.com/<insert_org_here>/apache_example/issues'
 
 # The `source_url` points to the development repository for this cookbook.  A
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/poc_splunk_os_prereqs'
-
-depends 'poise-python'
+# source_url 'https://github.com/<insert_org_here>/apache_example'
