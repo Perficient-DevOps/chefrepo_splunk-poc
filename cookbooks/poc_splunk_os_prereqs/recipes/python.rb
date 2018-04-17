@@ -8,7 +8,7 @@ case node['platform']
   when /redhat/
     package 'python2-pip'
   when /centos/
-    package %( python python-pip)
+    package %w(python python-pip)
 end
 
 package %w(python-devel) do
