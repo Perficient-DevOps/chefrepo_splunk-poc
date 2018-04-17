@@ -1,6 +1,6 @@
 {
   "name": "splunk-server",
-  "description": "",
+  "description": "Applies to Splunk Servers.",
   "json_class": "Chef::Role",
   "default_attributes": {
 

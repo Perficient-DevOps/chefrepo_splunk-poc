@@ -18,7 +18,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[poc_splunk_os_prereqs::disable_selinux]
+      - recipe[poc_splunk_os_prereqs::default]
     verifier:
       inspec_tests:
         - test/integration/default

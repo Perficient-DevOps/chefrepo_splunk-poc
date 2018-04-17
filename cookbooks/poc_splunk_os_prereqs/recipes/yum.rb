@@ -27,7 +27,3 @@ end
 package %w(wget python python-pip python-devel openssl-devel gcc gcc-c++ net-tools tcpdump whois)  do
   action :install
 end
-
-execute "pip install" do
-      command "pip install pyopenssl"
-end
