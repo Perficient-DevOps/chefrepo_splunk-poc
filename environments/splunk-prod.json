@@ -2,7 +2,7 @@
   "name": "splunk-prod",
   "description": "",
   "cookbook_versions": {
-    "poc_splunk_os_prereqs" : "= 0.1.0",
+    "poc_splunk_os_prereqs" : "= 0.1.2",
     "poc_splunk_server" : "= 0.1.0",
     "poc_splunk_forwarder"  : "= 0.1.0"
   },
