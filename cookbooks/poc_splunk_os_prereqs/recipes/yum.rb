@@ -22,14 +22,14 @@
 
 # TODO: only works in CentOS
 
-when node['platform']
-  case /redhat/
+case node['platform']
+  when /redhat/
 
     execute 'Refresh Repositories' do
       action :nothing
       command 'yum repolist'
     end
-    
+
     # https://aws.amazon.com/premiumsupport/knowledge-center/ec2-enable-epel/
     execute 'Add EPEL to RHEL 7' do
       command 'yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y'
@@ -37,7 +37,7 @@ when node['platform']
       not_if 'yum repolist|grep epel'
     end
 
-  case /centos/
+  when /centos/
     yum_package 'epel-release' do
       action :install
       # FIXME: this package is not available in public RHEL repo?

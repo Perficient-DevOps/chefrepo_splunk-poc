@@ -4,10 +4,10 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
-when node['platform']
-  case /redhat/
+case node['platform']
+  when /redhat/
     package 'python2-pip'
-  case /centos/
+  when /centos/
     package %( python python-pip)
 end
 
