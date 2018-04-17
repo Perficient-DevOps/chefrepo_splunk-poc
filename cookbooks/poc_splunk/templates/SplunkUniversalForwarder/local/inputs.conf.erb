@@ -1,0 +1,6 @@
+<% @monitors.each do |monitor| %>
+[monitor:<%= monitor[:path] %>]
+_TCP_ROUTING = *
+index = <%= monitor[:index] %>
+
+<% end %>

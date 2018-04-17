@@ -1,0 +1,53 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  # Allow the chef-vault to resolve
+  data_bags_path: "test/fixtures/data_bags"
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+
+suites:
+  - name: default
+    run_list:
+      - recipe[poc_splunk::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      dev_mode: true
+      splunk:
+        accept_license: true
+
+  - name: server
+    run_list:
+      - recipe[poc_splunk::server]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      dev_mode: true
+      splunk:
+        accept_license: true
+
+  - name: client
+    run_list:
+      - recipe[poc_splunk::universalforwarder]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      dev_mode: true
+      splunk:
+        accept_license: true
+        is_server: false
