@@ -1,3 +1,12 @@
+
+[monitor://$SPLUNK_HOME/var/log/splunk/splunkd.log]
+  _TCP_ROUTING = *
+  index = _internal
+
+[monitor://$SPLUNK_HOME/var/log/splunk/metrics.log]
+  _TCP_ROUTING = *
+  index = _internal
+
 <% @monitors.each do |monitor| %>
 [monitor:<%= monitor[:path] %>]
 _TCP_ROUTING = *
