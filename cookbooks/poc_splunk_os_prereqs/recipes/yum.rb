@@ -21,24 +21,30 @@
 #yum -y install wget python python-pip python-devel openssl-devel gcc gcc-c++ net-tools tcpdump whois
 
 # TODO: only works in CentOS
-# yum_package 'epel-release' do
-#   action :install
-#   # FIXME: this package is not available in public RHEL repo?
-#   ignore_failure true
-# end
 
-#
-# https://aws.amazon.com/premiumsupport/knowledge-center/ec2-enable-epel/
-execute 'Add EPEL to RHEL 7' do
-  command 'yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y'
-  notifies :run, 'execute[Refresh Repositories]'
-  not_if 'yum repolist|grep epel'
+when node['platform']
+  case /redhat/
+
+    execute 'Refresh Repositories' do
+      action :nothing
+      command 'yum repolist'
+    end
+    
+    # https://aws.amazon.com/premiumsupport/knowledge-center/ec2-enable-epel/
+    execute 'Add EPEL to RHEL 7' do
+      command 'yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y'
+      notifies :run, 'execute[Refresh Repositories]'
+      not_if 'yum repolist|grep epel'
+    end
+
+  case /centos/
+    yum_package 'epel-release' do
+      action :install
+      # FIXME: this package is not available in public RHEL repo?
+      ignore_failure true
+    end
 end
 
-execute 'Refresh Repositories' do
-  action :nothing
-  command 'yum repolist'
-end
 
 # FIXME: Not idempotent so will not have predictable results to test for
 # consider something more like https://github.com/bflad/chef-auto-patch/

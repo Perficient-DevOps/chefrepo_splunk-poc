@@ -4,7 +4,14 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
-package %w(python python-pip python-devel)  do
+when node['platform']
+  case /redhat/
+    package 'python2-pip'
+  case /centos/
+    package %( python python-pip)
+end
+
+package %w(python-devel) do
   action :install
 end
 
