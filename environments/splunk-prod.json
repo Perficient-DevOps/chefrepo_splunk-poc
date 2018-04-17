@@ -4,7 +4,8 @@
   "cookbook_versions": {
     "poc_splunk_os_prereqs" : "= 0.1.4",
     "poc_splunk_server" : "= 0.1.0",
-    "poc_splunk_forwarder"  : "= 0.1.0"
+    "poc_splunk_forwarder"  : "= 0.1.0",
+    "poc_splunk" : "= 0.1.0"
   },
   "json_class": "Chef::Environment",
   "chef_type": "environment",
