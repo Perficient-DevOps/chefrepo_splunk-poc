@@ -4,5 +4,9 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
-# using a library cookbook as dependency to add a pip resource
+package %w(python python-pip python-devel)  do
+  action :install
+end
+
+# using the poise-python library to add a pip resource
 python_package 'pyopenssl'

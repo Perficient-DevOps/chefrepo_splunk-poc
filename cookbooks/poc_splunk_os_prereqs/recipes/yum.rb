@@ -19,11 +19,19 @@
 
 #echo "Installing dependencies for later applications"
 #yum -y install wget python python-pip python-devel openssl-devel gcc gcc-c++ net-tools tcpdump whois
-#pip install pyopenssl
+
 yum_package 'epel-release' do
   action :install
+  # FIXME: this package is not available in public RHEL repo?
+  ignore_failure true
 end
 
-package %w(wget python python-pip python-devel openssl-devel gcc gcc-c++ net-tools tcpdump whois)  do
+# FIXME: Not idempotent so will not have predictable results to test for
+# consider something more like https://github.com/bflad/chef-auto-patch/
+execute 'perform upgrade of packages' do
+  command 'yum upgrade -y'
+end
+
+package %w(wget openssl-devel gcc gcc-c++ net-tools tcpdump whois)  do
   action :install
 end
