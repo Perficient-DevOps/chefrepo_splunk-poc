@@ -1,6 +1,6 @@
 {
   "name": "splunk-forwarder",
-  "description": "",
+  "description": "Standard role for Splunk Universal Forwarder.",
   "json_class": "Chef::Role",
   "default_attributes": {
 
@@ -10,7 +10,8 @@
   },
   "chef_type": "role",
   "run_list": [
-
+    "recipe[poc_splunk_os_prereqs::default]",
+    "recipe[poc_splunk_forwarder::default]"
   ],
   "env_run_lists": {
 

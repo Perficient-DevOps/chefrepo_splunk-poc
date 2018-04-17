@@ -1,6 +1,6 @@
 {
   "name": "chef-client",
-  "description": "",
+  "description": "Apply the chef client cookbook for regular chef-client runs.",
   "json_class": "Chef::Role",
   "default_attributes": {
 
@@ -10,7 +10,7 @@
   },
   "chef_type": "role",
   "run_list": [
-
+    "recipe[poc_chef_client::default]"
   ],
   "env_run_lists": {
 

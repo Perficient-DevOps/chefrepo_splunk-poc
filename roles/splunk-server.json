@@ -10,7 +10,8 @@
   },
   "chef_type": "role",
   "run_list": [
-
+    "recipe[poc_splunk_os_prereqs::default]",
+    "recipe[poc_splunk_server::default]"
   ],
   "env_run_lists": {
 
