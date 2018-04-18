@@ -20,6 +20,7 @@ suites:
     run_list:
       - recipe[poc_splunk_os_prereqs::default]
       - recipe[poc_splunk_os_prereqs::disable_transparent_hugepages]
+      - recipe[poc_splunk_os_prereqs::set_ulimits]
     verifier:
       inspec_tests:
         - test/integration/default

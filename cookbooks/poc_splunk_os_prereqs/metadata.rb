@@ -20,3 +20,4 @@ chef_version '>= 12.14' if respond_to?(:chef_version)
 # source_url 'https://github.com/<insert_org_here>/poc_splunk_os_prereqs'
 
 depends 'poise-python'
+depends 'ulimit'
