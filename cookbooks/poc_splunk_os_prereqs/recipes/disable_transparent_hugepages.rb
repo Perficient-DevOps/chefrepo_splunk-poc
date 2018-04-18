@@ -7,11 +7,11 @@
 temp_script= File.join( Chef::Config[:file_cache_path], 'disable_hugepages.sh' )
 
 template temp_script do
-  source 'disable_hugepages.erb'
+  source 'disable_hugepages.sh.erb'
   mode '0777'
   :create
 end
 
 execute 'Run Shell Script' do
-  command './disable_hugepages.sh'
+  command "#{temp_script}"
 end

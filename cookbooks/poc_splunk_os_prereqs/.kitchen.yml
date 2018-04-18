@@ -19,6 +19,7 @@ suites:
   - name: default
     run_list:
       - recipe[poc_splunk_os_prereqs::default]
+      - recipe[poc_splunk_os_prereqs::disable_transparent_hugepages]
     verifier:
       inspec_tests:
         - test/integration/default
